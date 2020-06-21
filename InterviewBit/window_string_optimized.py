@@ -12,7 +12,8 @@ class Solution:
                 b_dict[x] += 1
             else:
                 b_dict[x] = 1
-
+        min_count_matches = 0
+        
         def add_j(j):
             j += 1
             if A[j] not in b_dict:
