@@ -10,5 +10,6 @@
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": true,
     "files.autoSave": "afterDelay",
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe"
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+    "python.formatting.provider": "black"
 }
