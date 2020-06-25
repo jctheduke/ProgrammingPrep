@@ -40,21 +40,23 @@ class Trie(object):
         else:
             return False
 
-# driver function 
-def main(): 
-    # Input keys (use only 'a' through 'z' and lower case) 
-    keys = ["cat", "cab", "catip"] 
-    output = ["Not present in trie", "Present in trie cat catip"] 
-    # Trie object 
-    t = Trie() 
-    # Construct trie 
-    for key in keys: 
-        t.insert(key) 
-    # Search for different keys 
-    print("{} ---- {}".format("cat",output[t.search("the")])) 
-    print("{} ---- {}".format("cab",output[t.search("these")])) 
-    print("{} ---- {}".format("catnip",output[t.search("their")])) 
-    print("{} ---- {}".format("thaw",output[t.search("thaw")])) 
-
-if __name__ == '__main__': 
-    main() 
+class Solution:
+    # @param A : string
+    # @param B : list of strings
+    # @return a list of integers
+    def solve(self, A, B):
+        good_words = A.split('_')
+        t = Trie() 
+        # Construct trie 
+        for key in good_words: 
+            t.insert(key)
+        
+        good_score = {}
+        for i,x in enumerate(B):
+            for word in x.split('_'):
+                good_score[i] = good_score.get(i,0) + (1 if t.search(word) else 0)
+        return [x[0] for x in sorted(good_score.items(), key=lambda x: -x[1])]
+A = "play_boy"
+B = [ "smart_guy", "girl_and_boy_play", "play_ground" ]
+s = Solution()
+print(s.solve(A, B))
