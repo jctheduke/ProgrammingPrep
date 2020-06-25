@@ -11,5 +11,5 @@
     "python.testing.unittestEnabled": true,
     "files.autoSave": "afterDelay",
     "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "autopep8"
 }
